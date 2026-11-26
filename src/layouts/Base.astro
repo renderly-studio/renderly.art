@@ -1,0 +1,54 @@
+---
+import '@fontsource/inter/300.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter-tight/300.css';
+import '@fontsource/inter-tight/400.css';
+import '@fontsource/inter-tight/500.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '../styles/global.css';
+import ld from '../ldjson.json';
+interface Props { title: string; description: string; path?: string; home?: boolean; }
+const { title, description, path = '/', home = false } = Astro.props;
+const url = new URL(path, 'https://renderly.art').href;
+const NAV_H = "<header class=\"nav brand-off\" id=\"siteNav\">\n  <div class=\"nav-inner\">\n    <a class=\"brand\" href=\"#top\" aria-label=\"Renderly Studio, home\"><span class=\"rmark\" aria-hidden=\"true\"></span><span>Renderly</span></a>\n    <button class=\"menu-btn\" aria-label=\"Open menu\" aria-expanded=\"false\" aria-controls=\"navlinks\"><span></span></button>\n    <nav class=\"nav-links\" id=\"navlinks\" aria-label=\"Main\">\n      <a href=\"#services\">Services</a>\n      <a href=\"#work\">Work</a>\n      <a href=\"#lab\">Lab</a>\n      <a class=\"btn\" href=\"#custom\">Start a project</a>\n    </nav>\n  </div>\n</header>\n\n";
+const NAV_S = "<header class=\"nav\" id=\"siteNav\">\n  <div class=\"nav-inner\">\n    <a class=\"brand\" href=\"/\" aria-label=\"Renderly Studio, home\"><span class=\"rmark\" aria-hidden=\"true\"></span><span>Renderly</span></a>\n    <button class=\"menu-btn\" aria-label=\"Open menu\" aria-expanded=\"false\" aria-controls=\"navlinks\"><span></span></button>\n    <nav class=\"nav-links\" id=\"navlinks\" aria-label=\"Main\">\n      <a href=\"/#services\">Services</a>\n      <a href=\"/#work\">Work</a>\n      <a href=\"/#lab\">Lab</a>\n      <a class=\"btn\" href=\"/#custom\">Start a project</a>\n    </nav>\n  </div>\n</header>\n\n";
+const FOOT_H = "<div class=\"dunes\" aria-hidden=\"true\"><div class=\"shot shot-o_waves\" style=\"background-position:center 40%\"></div><span class=\"dunes-shade\"></span><span class=\"coords\"><b>+</b><span>Barcelona · working worldwide<br>41.3851° N · 2.1734° E</span></span></div>\n<footer class=\"footer\">\n  <div class=\"wrap\">\n    <div class=\"footer-grid\">\n      <div>\n        <a class=\"brand\" href=\"#top\"><span class=\"rmark\" aria-hidden=\"true\" style=\"width:28px;height:28px;color:var(--honey)\"></span><span>Renderly Studio</span></a>\n        <p class=\"ai-note\" id=\"ai\"><b style=\"color:var(--bone);font-weight:500\">AI disclosure.</b> AI tools are part of the workflow, mainly for iteration, reference and repetitive steps. Nothing published by the studio is 100% AI-generated: every asset is modelled, textured, reviewed and finished by hand. Store listings flag AI use where the platform requires it.</p>\n      </div>\n      <div>\n        <h4>Studio</h4>\n        <ul><li><a href=\"/services\">Services</a></li><li><a href=\"#work\">Work</a></li><li><a href=\"#lab\">Lab</a></li><li><a class=\"js-copy\" href=\"#\" data-email=\"hello@renderly.art\">hello@renderly.art</a></li><li><a href=\"https://www.artstation.com/renderly\" target=\"_blank\" rel=\"noopener\">ArtStation ↗</a></li><li><a href=\"https://www.linkedin.com/in/guille2019/\" target=\"_blank\" rel=\"noopener\">LinkedIn ↗</a></li></ul>\n      </div>\n      <div>\n        <h4>Legal</h4>\n        <ul><li><a href=\"/legal\">Legal notice</a></li><li><a href=\"/privacy\">Privacy policy</a></li><li><a href=\"/cookies\">Cookies</a></li><li><a href=\"/licence\">Licences &amp; copyright</a></li></ul>\n      </div>\n    </div>\n    <small>© 2025–2026 Renderly Studio · Barcelona, Catalonia · Working worldwide</small>\n  </div>\n</footer>\n\n";
+const FOOT_S = "<div class=\"dunes\" aria-hidden=\"true\"><div class=\"shot shot-o_waves\" style=\"background-position:center 40%\"></div><span class=\"dunes-shade\"></span><span class=\"coords\"><b>+</b><span>Barcelona · working worldwide<br>41.3851° N · 2.1734° E</span></span></div>\n<footer class=\"footer\">\n  <div class=\"wrap\">\n    <div class=\"footer-grid\">\n      <div>\n        <a class=\"brand\" href=\"/\"><span class=\"rmark\" aria-hidden=\"true\" style=\"width:28px;height:28px;color:var(--honey)\"></span><span>Renderly Studio</span></a>\n        <p class=\"ai-note\" id=\"ai\"><b style=\"color:var(--bone);font-weight:500\">AI disclosure.</b> AI tools are part of the workflow, mainly for iteration, reference and repetitive steps. Nothing published by the studio is 100% AI-generated: every asset is modelled, textured, reviewed and finished by hand. Store listings flag AI use where the platform requires it.</p>\n      </div>\n      <div>\n        <h4>Studio</h4>\n        <ul><li><a href=\"/services\">Services</a></li><li><a href=\"/#work\">Work</a></li><li><a href=\"/#lab\">Lab</a></li><li><a class=\"js-copy\" href=\"#\" data-email=\"hello@renderly.art\">hello@renderly.art</a></li><li><a href=\"https://www.artstation.com/renderly\" target=\"_blank\" rel=\"noopener\">ArtStation ↗</a></li><li><a href=\"https://www.linkedin.com/in/guille2019/\" target=\"_blank\" rel=\"noopener\">LinkedIn ↗</a></li></ul>\n      </div>\n      <div>\n        <h4>Legal</h4>\n        <ul><li><a href=\"/legal\">Legal notice</a></li><li><a href=\"/privacy\">Privacy policy</a></li><li><a href=\"/cookies\">Cookies</a></li><li><a href=\"/licence\">Licences &amp; copyright</a></li></ul>\n      </div>\n    </div>\n    <small>© 2025–2026 Renderly Studio · Barcelona, Catalonia · Working worldwide</small>\n  </div>\n</footer>\n\n";
+---
+<!doctype html>
+<html lang="en" data-bg="none">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={url} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Renderly Studio" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={url} />
+<meta property="og:image" content="https://renderly.art/og/renderly-og-1200x630.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#0b0b0b" />
+<link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/brand/favicon-192.png" />
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+{home && ld.map((j) => <script type="application/ld+json" set:html={j} />)}
+<!-- Cloudflare Web Analytics (sin cookies): pegar aquí el token cuando esté activado
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"TOKEN"}'></script> -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<canvas id="bokeh" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+{home ? <Fragment set:html={NAV_H} /> : <Fragment set:html={NAV_S} />}
+<slot />
+{home ? <Fragment set:html={FOOT_H} /> : <Fragment set:html={FOOT_S} />}
+<div class="toast" role="status" style="position:fixed;bottom:1.4rem;left:50%;transform:translateX(-50%);z-index:95;font-family:var(--font-mono);font-size:.72rem;background:rgba(7,7,7,.92);border:1px solid var(--honey-dim);padding:.6rem 1rem;opacity:0;pointer-events:none;transition:opacity .3s">hello@renderly.art copied</div>
+
+<script is:inline src="/js/site.js"></script>
+</body>
+</html>

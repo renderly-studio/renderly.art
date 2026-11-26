@@ -1,0 +1,7 @@
+---
+import Base from '../layouts/Base.astro';
+const html = "<main id=\"main\"><section class=\"page page-standalone\" id=\"cookies\" aria-labelledby=\"h-ck\">\n  <div class=\"page-inner\">\n    <p class=\"eyebrow\">Legal</p>\n    <h1 id=\"h-ck\">Cookies</h1>\n    <p class=\"updated\">Last updated: 26 November 2026</p>\n    <p>renderly.art does not use cookies for tracking, advertising or analytics, so there is no cookie banner.</p>\n    <ul>\n      <li><b>Analytics:</b> Cloudflare Web Analytics, which counts visits without cookies and without storing your IP address.</li>\n      <li><b>Fonts:</b> served from this site, not from third-party font services.</li>\n      <li><b>Embedded video:</b> none at the moment. If we add YouTube or similar, videos will load only after you click them, and this page will be updated.</li>\n    </ul>\n    <p>Links to Fab, Unity Asset Store, Gumroad and social networks take you to their sites, which use their own cookies.</p>\n  </div>\n</section></main>";
+---
+<Base title="Cookies · Renderly Studio" description="Cookies used on renderly.art." path="/cookies">
+<Fragment set:html={html} />
+</Base>

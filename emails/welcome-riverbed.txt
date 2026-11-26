@@ -1,0 +1,25 @@
+Subject: Your free Riverbed Rock Material is here
+
+Thanks for joining the Renderly list.
+
+Here is the 4K tileable river-stone material I promised: ready-to-use textures plus a parametric .sbsar with 7 colour presets, built in Substance Designer and tested in Unreal and Unity.
+
+Download: https://renderlystudio.gumroad.com/l/riverbed-rock-material/RIVERBED
+Your code: RIVERBED
+
+- Resolution: 4K, tileable
+- Presets: 1 colour as textures · 7 in the .sbsar
+- Maps: base colour, normal, height, roughness, AO
+- Engines: Unreal Engine 5, Unity 6, Blender
+
+Free for personal and commercial projects. Just don't resell it as an asset.
+
+I'll write when the next pack or tool lands, no more than once per release. If you need environments, an optimization pass or tech art on a Unity or Unreal project: https://renderly.art/services
+
+Guille
+Renderly Studio · renderly.art
+
+--
+You are receiving this because you joined the Renderly list at renderly.art.
+Renderly Studio · 08100 Mollet del Vallès (Barcelona), Spain · hello@renderly.art
+Unsubscribe: {$unsubscribe}

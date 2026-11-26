@@ -1,46 +1,26 @@
-# Astro Starter Kit: Basics
+# renderly.art
 
-```sh
-npm create astro@latest -- --template basics
+Web de Renderly Studio (Astro, estática). Se publica sola en GitHub Pages cada vez que se sube algo a la rama `main` (workflow `.github/workflows/deploy.yml`). Las demás ramas no se publican.
+
+## Estructura
+
+- `src/pages/` — una página por archivo: portada (`index.astro`), `/services`, `/lab/riverbed-rock-material`, `/legal`, `/privacy`, `/cookies`, `/licence`.
+- `src/layouts/Base.astro` — cabecera, menú, pie de página y metadatos comunes.
+- `src/styles/global.css` — todos los estilos.
+- `public/js/site.js` — partículas del formulario, carruseles, menú móvil, formularios.
+- `public/img/` — imágenes y animaciones. Para cambiar una, sustituye el archivo manteniendo el mismo nombre.
+- `public/brand/` y `public/favicon.ico` — logo y favicons. `public/og/` — imagen para compartir en redes.
+
+## Pendiente antes de publicar
+
+- `public/img/about.jpg`: foto real de About (vertical 4:5, mismo nombre).
+- `/legal` y `/privacy`: NIF real y dirección fiscal (buscar `class="todo"` en `src/pages/legal.astro` y `src/pages/privacy.astro`).
+- Formularios: hoy abren el correo (mailto). Cuando haya cuenta de Formspree/Web3Forms y MailerLite, se conectan en `public/js/site.js`.
+- Cloudflare Web Analytics: pegar el token en `src/layouts/Base.astro`.
+
+## En local (opcional)
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+npm install
+npm run dev
 ```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
