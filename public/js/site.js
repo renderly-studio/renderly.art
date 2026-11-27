@@ -99,7 +99,7 @@ try {
   const beamX = (b, y, t) => (b.x + .025 * Math.sin(t * b.sp * 6.283 + b.ph)) * W + y * tilt;
   const lightAt = (x, y, t) => {
     let l = 0;
-    for (const b of beams) { const d = (x - beamX(b, y, t)) / (b.w * W); l += b.a * 5 * Math.exp(-d * d) * (1 - .55 * y / H); }
+    /* sin haces de luz: solo partículas con un brillo suave y uniforme */ l = .32;
     const caus = .5 + .5 * Math.sin(x * .021 + t * .9) * Math.sin(y * .017 - t * .7 + Math.sin(x * .008 + t * .4));
     return Math.min(1.4, l * (.75 + .5 * caus) + .1 * caus);
   };
@@ -142,7 +142,7 @@ try {
   const step = now => {
     const t = (now - t0) / 1000, dt = Math.min(.05, (now - last) / 1000 || .016); last = now;
     const ds = Math.max(-25, Math.min(25, scrollY - lastScroll)); lastScroll = scrollY;
-    ctx.clearRect(0, 0, W, H); drawBeams(t); ctx.globalCompositeOperation = 'lighter';
+    ctx.clearRect(0, 0, W, H); ctx.globalCompositeOperation = 'lighter';
     for (const p of parts) {
       if (!reduced) {
         // turbulencia bajo el agua: campo de senos + remolino lento
@@ -198,6 +198,7 @@ try {
 /* ---------- visibilidad del formulario: enciende las chispas solo en "Start a project" ---------- */
 (function(){
   const custom = document.getElementById('custom');
+  if (!custom) return;
   const track = () => { const r = custom.getBoundingClientRect(); const vis = Math.max(0, Math.min(r.bottom, innerHeight) - Math.max(r.top, 0)) / Math.min(innerHeight, r.height); window.__b2b = Math.min(1, Math.max(0, (vis - .15) / .6)); };
   addEventListener('scroll', track, { passive: true }); addEventListener('resize', track); track();
 })();
