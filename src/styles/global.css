@@ -650,3 +650,11 @@ a.inline:hover{color:var(--honey);border-color:var(--honey)}
 .svc-detail dt:first-of-type,.svc-detail dd:first-of-type{border-top:0;padding-top:.15rem}
 .svc-detail dt{padding-top:.85rem}
 .svc-detail dt:first-of-type{padding-top:.3rem}
+
+/* v17b · carrusel de Hallway en el hero (sustituye al zoom lento de la imagen fija) */
+.hx-main.car .slide{animation:car 16s linear infinite}
+.hx-main.car .slide:nth-child(2){animation-delay:4s}
+.hx-main.car .slide:nth-child(3){animation-delay:8s}
+.hx-main.car .slide:nth-child(4){animation-delay:12s}
+.hx-main.car .credit{z-index:5}
+@media(prefers-reduced-motion:reduce){.hx-main.car .slide{animation:none}.hx-main.car .slide:first-child{opacity:1}}

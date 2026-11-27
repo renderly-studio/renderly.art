@@ -32,10 +32,10 @@ const FOOT_S = "<div class=\"dunes\" aria-hidden=\"true\"><div class=\"shot shot
 <meta property="og:image" content="https://renderly.art/og/renderly-og-1200x630.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#0b0b0b" />
-<link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
-<link rel="icon" type="image/png" sizes="192x192" href="/brand/favicon-192.png" />
-<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
-<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png?v=2" />
+<link rel="icon" type="image/png" sizes="192x192" href="/brand/favicon-192.png?v=2" />
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png?v=2" />
+<link rel="icon" href="/favicon.ico?v=2" sizes="any" />
 {home && ld.map((j) => <script type="application/ld+json" set:html={j} />)}
 <!-- Cloudflare Web Analytics (sin cookies): pegar aquí el token cuando esté activado
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"TOKEN"}'></script> -->
@@ -49,6 +49,6 @@ const FOOT_S = "<div class=\"dunes\" aria-hidden=\"true\"><div class=\"shot shot
 {home ? <Fragment set:html={FOOT_H} /> : <Fragment set:html={FOOT_S} />}
 <div class="toast" role="status" style="position:fixed;bottom:1.4rem;left:50%;transform:translateX(-50%);z-index:95;font-family:var(--font-mono);font-size:.72rem;background:rgba(7,7,7,.92);border:1px solid var(--honey-dim);padding:.6rem 1rem;opacity:0;pointer-events:none;transition:opacity .3s">hello@renderly.art copied</div>
 
-<script is:inline src="/js/site.js"></script>
+<script is:inline src="/js/site.js?v=17b"></script>
 </body>
 </html>
